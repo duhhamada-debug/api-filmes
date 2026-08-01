@@ -2,7 +2,7 @@
 
 ## O que é este projeto
 Sistema em Flask para gerenciar um catálogo de filmes em memória (lista Python), sem banco de dados.
-Cada filme possui: `id`, `titulo`, `genero`, `ano` e `nota`.
+Cada filme possui: `id`, `titulo`, `genero`, `ano`, `nota` e `diretor`.
 
 ## Padrões Técnicos
 - Python 3 com Flask e Flask-CORS
@@ -10,7 +10,7 @@ Cada filme possui: `id`, `titulo`, `genero`, `ano` e `nota`.
 - Comentários em português explicando cada função
 
 ## Regras Obrigatórias
-1. Não permitir cadastro sem `titulo`, `genero`, `ano` e `nota`. Retorne HTTP 400 e `{"erro": "Campos obrigatórios ausentes"}` caso algum tente ser cadastrado sem.
+1. Não permitir cadastro sem `titulo`, `genero`, `ano`, `nota` e `diretor`. Retorne HTTP 400 e `{"erro": "Campos obrigatórios ausentes"}` caso algum falte.
 2. Validações:
    - `nota` deve ser entre 0 e 10.
    - `ano` deve ser um número inteiro de 4 dígitos.
