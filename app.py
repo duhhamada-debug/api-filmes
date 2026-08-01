@@ -100,6 +100,20 @@ def atualizar_filme(filme_id):
     return jsonify(filme), 200
 
 
+@app.route("/filmes/genero/<genero>", methods=["GET"])
+def buscar_filmes_por_genero(genero):
+    # Filtra os filmes cujo gênero corresponde ao parâmetro, ignorando maiúsculas/minúsculas
+    resultado = [f for f in filmes if f["genero"].lower() == genero.lower()]
+    return jsonify(resultado), 200
+
+
+@app.route("/filmes/diretor/<diretor>", methods=["GET"])
+def buscar_filmes_por_diretor(diretor):
+    # Filtra os filmes cujo diretor corresponde ao parâmetro, ignorando maiúsculas/minúsculas
+    resultado = [f for f in filmes if f["diretor"].lower() == diretor.lower()]
+    return jsonify(resultado), 200
+
+
 @app.route("/filmes/<int:filme_id>", methods=["DELETE"])
 def deletar_filme(filme_id):
     filme = buscar_filme_por_id(filme_id)
