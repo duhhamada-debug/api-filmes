@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Filmes</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Catálogo de Filmes</h1>
+
+    <div id="mensagem-erro" class="mensagem-erro" style="display:none;"></div>
+    <div id="mensagem-sucesso" class="mensagem-sucesso" style="display:none;"></div>
+
+    <div id="painel-resumo" class="painel-resumo" style="display:none;">
+      <div class="painel-item">
+        <span class="painel-label">Total de Filmes:</span>
+        <span id="total-filmes" class="painel-valor">0</span>
+      </div>
+      <div class="painel-item">
+        <span class="painel-label">Média das Notas:</span>
+        <span id="media-notas" class="painel-valor">0</span>
+      </div>
+    </div>
+
+    <form id="form-filme" class="form-filme">
+      <input type="hidden" id="filme-id">
+      <div class="campo">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+      </div>
+      <div class="campo">
+        <label for="genero">Gênero:</label>
+        <input type="text" id="genero" name="genero" required>
+      </div>
+      <div class="campo">
+        <label for="ano">Ano:</label>
+        <input type="number" id="ano" name="ano" min="1000" max="9999" required>
+      </div>
+      <div class="campo">
+        <label for="nota">Nota (0-10):</label>
+        <input type="number" id="nota" name="nota" min="0" max="10" step="0.1" required>
+      </div>
+      <div class="campo">
+        <label for="diretor">Diretor:</label>
+        <input type="text" id="diretor" name="diretor" required>
+      </div>
+      <div class="acoes-form">
+        <button type="submit" id="btn-salvar">Cadastrar</button>
+        <button type="button" id="btn-cancelar" style="display:none;">Cancelar</button>
+      </div>
+    </form>
+
+    <h2>Lista de Filmes</h2>
+    <div id="tabela-container">
+      <table id="tabela-filmes">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Gênero</th>
+            <th>Ano</th>
+            <th>Nota</th>
+            <th>Diretor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela">
+        </tbody>
+      </table>
+      <p id="sem-dados" style="display:none;">Nenhum filme cadastrado.</p>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
